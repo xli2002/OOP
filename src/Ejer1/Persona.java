@@ -12,9 +12,7 @@ public class Persona {
     private String apellidos;
     private int edad;
     private String DNI;
-
     public enum Sexo {Hombre, Mujer, No}
-
     private Sexo sexo;
     private double peso;
     private double altura;

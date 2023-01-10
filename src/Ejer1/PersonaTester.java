@@ -30,6 +30,7 @@ public class PersonaTester {
                 personas[i] = new Persona(nombre, apellidos, edad);
             }
         }
+
         for (Persona persona : personas) {
             int imc = persona.calcularIMC();
             String estadoIMC;
@@ -46,6 +47,7 @@ public class PersonaTester {
                 default:
                     estadoIMC = "obeso";
             }
+
             System.out.println("La persona " + persona.getNombre() + " " + persona.getApellidos() + " tiene " + estadoIMC + ".");
             System.out.println("La persona " + persona.getNombre() + " " + persona.getApellidos() + (persona.esMayorDeEdad() ? " es mayor de edad." : " no es mayor de edad."));
             System.out.println("Información de la persona: " + persona);
