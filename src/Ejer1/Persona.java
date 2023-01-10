@@ -44,7 +44,6 @@ public class Persona {
 
     /**
      * Método para calcular el IMC
-     *
      * @return Devuelve el IMC
      */
     public int calcularIMC() {
@@ -62,7 +61,6 @@ public class Persona {
 
     /**
      * Método para comprobar si es mayor de edad
-     *
      * @return Devuelve edad
      */
 
@@ -72,7 +70,6 @@ public class Persona {
 
     /**
      * Método toString
-     *
      * @return Devuelve el tostring
      */
 

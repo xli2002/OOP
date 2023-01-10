@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class PersonaTester {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Persona[] personas = new Persona[2];
+        Persona[] personas = new Persona[6];
         boolean conDNI;
         for (int i = 0; i < personas.length; i++) {
             System.out.println("¿Tiene DNI la persona " + (i + 1) + "? (s/n)");
@@ -21,9 +21,9 @@ public class PersonaTester {
                 String DNI = sc.nextLine();
                 System.out.print("Sexo (Hombre/Mujer/No): ");
                 Persona.Sexo sexo = Persona.Sexo.valueOf(sc.nextLine());
-                System.out.print("Peso (kg): ");
+                System.out.print("Peso (kilogramo): ");
                 double peso = Double.parseDouble(sc.nextLine());
-                System.out.print("Altura (m): ");
+                System.out.print("Altura (metros): ");
                 double altura = Double.parseDouble(sc.nextLine());
                 personas[i] = new Persona(nombre, apellidos, edad, DNI, sexo, peso, altura);
             } else {
