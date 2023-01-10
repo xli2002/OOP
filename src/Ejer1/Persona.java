@@ -1,5 +1,4 @@
 package Ejer1;
-
 import java.util.Random;
 
 /**
