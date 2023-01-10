@@ -77,7 +77,7 @@ public class Persona {
      */
 
     public String toString() {
-        return "Nombre: " + nombre + " " + apellidos + ", Edad: " + edad + ", DNI: " + DNI + ", Sexo: " + sexo + ", Peso: " + peso + "kg, Altura: " + altura + "m";
+        return nombre + " " + apellidos + ", Edad: " + edad + ", DNI: " + DNI + ", Sexo: " + sexo + ", Peso: " + peso + "kg y Altura: " + altura + "m";
     }
 
     /**

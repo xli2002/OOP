@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class PersonaTester {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Persona[] personas = new Persona[6];
+        Persona[] personas = new Persona[2];
         boolean conDNI;
         for (int i = 0; i < personas.length; i++) {
-            System.out.println("¿Introduce el DNI de la persona " + (i + 1) + "? (s/n)");
-            conDNI = sc.nextLine().equals("s");
+            System.out.println("¿Tiene DNI la persona " + (i + 1) + "? (s/n)");
+            conDNI = sc.nextLine().equalsIgnoreCase("s");
             System.out.print("Nombre: ");
             String nombre = sc.nextLine();
             System.out.print("Apellidos: ");
@@ -39,18 +39,19 @@ public class PersonaTester {
                     estadoIMC = "bajo peso";
                     break;
                 case 0:
-                    estadoIMC = "peso ideal";
+                    estadoIMC = "un peso ideal";
                     break;
                 case 1:
                     estadoIMC = "sobrepeso";
                     break;
                 default:
-                    estadoIMC = "obeso";
+                    estadoIMC = "obesidad";
             }
 
+            System.out.println("La persona: " + persona);
             System.out.println("La persona " + persona.getNombre() + " " + persona.getApellidos() + " tiene " + estadoIMC + ".");
-            System.out.println("La persona " + persona.getNombre() + " " + persona.getApellidos() + (persona.esMayorDeEdad() ? " es mayor de edad." : " no es mayor de edad."));
-            System.out.println("Información de la persona: " + persona);
+            System.out.println("La persona " + persona.getNombre() + " " + persona.getApellidos() + (persona.esMayorDeEdad() ? " es mayor de edad." : " es menor de edad."));
+            System.out.println();
         }
     }
 }
