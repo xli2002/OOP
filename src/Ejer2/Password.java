@@ -8,7 +8,7 @@ import java.util.Random;
 public class Password {
     private static final int defecto = 10;
     private int longitud;
-    private String contraseña;
+    private String password;
 
     /**
      * Constructor por defecto
@@ -31,14 +31,13 @@ public class Password {
      * Método que determina si la contraseña es fuerte
      * @return Devuelve una contraseña fuerte
      */
-
     public boolean esFuerte() {
         int mayusculas = 0;
         int minusculas = 0;
         int numeros = 0;
 
-        for (int i = 0; i < contraseña.length(); i++) {
-            char caracter = contraseña.charAt(i);
+        for (int i = 0; i < password.length(); i++) {
+            char caracter = password.charAt(i);
 
             if (Character.isUpperCase(caracter)) {
                 mayusculas++;
@@ -48,7 +47,6 @@ public class Password {
                 numeros++;
             }
         }
-
         return mayusculas > 2 && minusculas > 1 && numeros > 4;
     }
 
@@ -63,8 +61,7 @@ public class Password {
             char caracter = (char)(random.nextInt(94) + 33);
             sb.append(caracter);
         }
-
-        this.contraseña = sb.toString();
+        this.password = sb.toString();
     }
 
     public int getLongitud() {
@@ -73,7 +70,7 @@ public class Password {
     public void setLongitud(int longitud) {
         this.longitud = longitud;
     }
-    public String getcontraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 }
