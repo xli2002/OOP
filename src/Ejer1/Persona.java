@@ -1,12 +1,17 @@
 package Ejer1;
+
 import java.util.Random;
 
 /**
+ * Clase, para almacenar información sobre una persona.
+ * Permite calcular el IMC y determinar si es mayor de edad.
+ *
  * @author Xinyu Li
- * @version 1.0
+ * @version 11/01/23
  */
 
 public class Persona {
+
     private String nombre;
     private String apellidos;
     private int edad;
@@ -17,7 +22,13 @@ public class Persona {
     private double altura;
 
     /**
-     * Contructor de Persona
+     * Constructor de Persona sin DNI.
+     * Permite crear una persona con solo el nombre, apellidos y edad.
+     * Genera un DNI aleatorio para la persona.
+     *
+     * @param nombre    define el nombre de persona
+     * @param apellidos define el apellido de persona
+     * @param edad      define la edad de persona
      */
     public Persona(String nombre, String apellidos, int edad) {
         this.nombre = nombre;
@@ -25,12 +36,20 @@ public class Persona {
         this.edad = edad;
         this.sexo = Sexo.No;
         generaDNI();
-    }
+    }//cierre de constructor
 
     /**
-     * Otro contructor de Persona
+     * Constructor de Persona con DNI.
+     * Permite crear una persona con nueva persona con nombre, apellidos, edad, DNI, sexo, peso y altura.
+     *
+     * @param nombre    define el nombre de persona
+     * @param apellidos define el apellido de persona
+     * @param edad      define la edad de persona
+     * @param DNI       define el DNI de persona
+     * @param sexo      define el sexo de persona
+     * @param peso      define el peso de persona
+     * @param altura    define la altura de persona
      */
-
     public Persona(String nombre, String apellidos, int edad, String DNI, Sexo sexo, double peso, double altura) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -39,11 +58,14 @@ public class Persona {
         this.sexo = sexo;
         this.peso = peso;
         this.altura = altura;
-    }
+    }//cierre de constructor
 
     /**
-     * Método para calcular el IMC
-     * @return Devuelve el IMC
+     * Método para calcular el IMC.
+     * Utiliza el peso y altura de la persona para calcular el IMC.
+     * Devuelve -1 si tiene bajo peso, 0 si tiene un peso ideal, 1 si tiene sobre peso y 2 si está en obesidad.
+     *
+     * @return El estado del IMC.
      */
     public int calcularIMC() {
         double imc = peso / (altura * altura);
@@ -56,11 +78,12 @@ public class Persona {
         } else {
             return 2;
         }
-    }
+    }//cierre de método
 
     /**
-     * Método para comprobar si es mayor de edad
-     * @return Devuelve edad
+     * Método para comprobar si es mayor de edad.
+     *
+     * @return Si es mayor de edad te va un true y si es menor un false.
      */
 
     public boolean esMayorDeEdad() {
@@ -68,16 +91,18 @@ public class Persona {
     }
 
     /**
-     * Método toString
-     * @return Devuelve el tostring
+     * Método toString.
+     *
+     * @return Devuelve en forma de cadena la clase persona.
      */
 
     public String toString() {
-        return nombre + " " + apellidos + ", Edad: " + edad + ", DNI: " + DNI + ", Sexo: " + sexo + ", Peso: " + peso + "kg y Altura: " + altura + "m";
-    }
+        return nombre + " " + apellidos + ", Edad: " + edad + ", DNI: " + DNI + ", Sexo: " +
+                sexo + ", Peso: " + peso + "kg y Altura: " + altura + "m";
+    }//cierre de método
 
     /**
-     * Método para generar el DNI
+     * Método para generar el DNI de forma aleatoria.
      */
 
     private void generaDNI() {
@@ -86,7 +111,11 @@ public class Persona {
         String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
         int modulo = Integer.parseInt(numDNI) % 23;
         DNI = numDNI + letras.charAt(modulo);
-    }
+    }//cierre de método
+
+    /**
+     * Métodos setters y getters.
+     */
 
     public String getNombre() {
         return nombre;
@@ -143,4 +172,4 @@ public class Persona {
     public void setAltura(double altura) {
         this.altura = altura;
     }
-}
+}//cierre de la clase
